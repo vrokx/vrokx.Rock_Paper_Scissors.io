@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css\style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="js\onload.js"></script>
+  <title>Game</title>
+</head>
+
+<body>
+  <div class="loader-wrapper">
+    <img src="img\rock_white.png" id="loader" alt="loader">
+  </div>
+  <iframe allow="autoplay" style="display: none;">
+    <audio autoplay loop id="bgMusic">
+      <source src="img\POL-two-fat-gangsters-short.mp3" type="audio/mp3" />
+    </audio>
+  </iframe>
+  <video autoplay muted loop id="background">
+    <source src="img\background_2.mp4" />
+  </video>
+  <audio id="clickSound">
+    <source src="img\button_press_click_feedback_003_60932.mp3" type="audio/mp3" />
+  </audio>
+  <div class="mainMenu">
+    <h1 id="mainHeading">| ROCK |<br>| PAPER |<br>| SCISSORS |</h1>
+    <button type="button" id="start" onclick="start();">START</button><br><br>
+    <button type="button" id="settings" onclick="settings();">SETTINGS</button><br><br>
+    <button type="button" id="exit" onclick="exit();">EXIT</button><br><br>
+  </div>
+  <div class="popupPoints">
+    <h3 id="question">For How Many Points You Want To Play ?</h3><br>
+    <input type="number" id="totalPoints" required>
+    <button type="button" id="submit" onclick="submit();">SUBMIT</button>
+    <button type="button" id="close" onclick="closeBtn();">X</button>
+  </div>
+  <div class="settings">
+    <h1 id="mainHeading">| ROCK |<br>| PAPER |<br>| SCISSORS |</h1>
+    <button type="button" id="music" onclick="music();">MUSIC</button><br><br>
+    <img id="musicOnImg" src="img\music_on_white.png" alt="music_on_white">
+    <button type="button" id="audio" onclick="audio();">AUDIO</button><br><br>
+    <img id="volumeOnImg" src="img\volume_on_white.png" alt="volume_on_white">
+    <!--<img src="img\back_white.png" alt="back" onclick="window.history.back();">-->
+    <div class="credits">
+      <h2 id="creditText">-: CREDITS :-</h2>
+      <h3 id="devName">VAIBHAV PARESH RAVAL</h3>
+      <a href="https://www.instagram.com/coding_tips_/" target="_blank"><img id="insta" src="img\instagram_white.png"
+          alt="instagram"></a>
+      <a href="https://www.facebook.com/vaibhav.raval.906638/" target="_blank"><img id="facebook"
+          src="img\facebook_white.png" alt="facebook"></a>
+      <a href="https://www.twitter.com/VaibhavRaval15?s=08" target="_blank"></a><img id="twitter"
+        src="img\twitter_white.png" alt="twitter"></a>
+    </div>
+  </div>
+  <div class="mainGame">
+    <img src="img\rock_blue.png" class="responsiveBtn" id="rock" alt="rock" onclick="rock();">
+    <img src="img\paper_blue.png" class="responsiveBtn" id="paper" alt="paper" onclick="paper();">
+    <img src="img\scissor_blue.png" class="responsiveBtn" id="scissors" alt="scissor" onclick="scissors();">
+    <br><br>
+    <br><br>
+    <div id="userPointCounter"><label id="lable1">Your Point</label>
+      <h3 id="yourPoint">0</h3>
+    </div>
+    <div id="comPointCounter"><label id="lable2">Computer's Point</label>
+      <h3 id="comPoint">0</h3>
+    </div>
+    <img src="img\rockup_white.png" class="responsive animationUser" id="yourChoice" alt="rockDefault">
+    <img src="img\rockup_white_rotate.png" class="responsive animationCom" id="comChoice" alt="rockDefault">
+    <p id="ans"></p>
+  </div>
+  <div class="popupRestart">
+    <h4 id="winner">winner</h4><br>
+    <button type="button" id="restart" onClick="window.location.reload();">RESTART</button>
+  </div>
+  <div class="popupExit">
+    <h4 id="exitQ">Are you sure , you want to quit game ?</h4><br>
+    <button type="button" id="yes" onclick="exitYES();">YES</button>
+    <button type="button" id="no" onclick="exitNO();">No</button>
+  </div>
+  <script src="js\script.js"></script>
+</body>
+
+</html>
