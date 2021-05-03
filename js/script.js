@@ -10,6 +10,7 @@ var musicIcon = document.querySelector("#musicOnImg");
 var clickSound = document.querySelector("#clickSound");
 var buttons = document.querySelectorAll("button");
 var popupExit = document.querySelector(".popupExit");
+var allBtn = document.querySelectorAll("button");
 ////////////////////////////////////////////////////
 const options = ["rock", "paper", "scissor"];
 const ans = document.querySelector("#ans");
@@ -30,7 +31,9 @@ function settings() {
   mainMenu.style.display = "none";
   setting.style.display = "block";
 }
-
+function clickPlay(){
+  clickSound.play();
+}
 function music() {
   if (bgMusic.paused) {
     bgMusic.play();
@@ -42,11 +45,9 @@ function music() {
   }
 }
 
-function audio() {
-}
-
 function submit() {
   totalPoints = parseInt(document.querySelector("#totalPoints").value);
+  background.style.display = "none";
 
   if (totalPoints === '' || totalPoints === null || totalPoints === 0 || totalPoints === String || totalPoints === NaN) {
     alert("Enter Valid Number 😐");
@@ -59,7 +60,10 @@ function submit() {
 function closeBtn() {
   popupPoints.style.display = "none";
 }
-
+function backBtn() {
+  mainMenu.style.display = "block";
+  setting.style.display = "none";
+}
 function rock() {
 
   var random = Math.floor(Math.random() * options.length);
